@@ -16,4 +16,5 @@ class Inimigo(Personagem):
 
     def atacar(self, alvo):
         # TODO: implementar ataque
-        pass
+        alvo.receber_dano(self.ataque)
+        print(f"{self.nome} atacou {alvo.nome} !")
