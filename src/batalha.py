@@ -44,5 +44,7 @@ class Batalha:
                 continue
 
             # TODO: inimigo deve atacar depois do jogador
-
+            if self.inimigo.esta_vivo():
+                self.inimigo.atacar(self.jogador)
+            
         # TODO: verificar quem venceu

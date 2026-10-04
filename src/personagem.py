@@ -15,7 +15,11 @@ class Personagem(ABC):
 
     def receber_dano(self, dano):
         # TODO: calcular o dano considerando a defesa
-        pass
+        dano_final = dano - self.defesa # dano em relação a defesa do personagem
+        
+        self.vida -= dano_final #Impacto do dano na vida do personagem
+        
+
 
     @abstractmethod
     def atacar(self, alvo):
