@@ -1,3 +1,5 @@
+from item import PocaoVida
+
 class Batalha:
 
     def __init__(self, jogador, inimigo):
@@ -29,7 +31,9 @@ class Batalha:
 
             elif opcao == "2":
                 # TODO: implementar item
-                pass
+                pocao_vida = PocaoVida()
+                pocao_vida.usar(self.jogador)
+                
 
             elif opcao == "3":
                 print("Você fugiu da batalha!")
