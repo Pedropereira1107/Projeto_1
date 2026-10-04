@@ -48,3 +48,7 @@ class Batalha:
                 self.inimigo.atacar(self.jogador)
             
         # TODO: verificar quem venceu
+        if self.jogador.esta_vivo():
+            print(f"{self.jogador.nome} venceu a batalha !")
+        else:
+            print(f"{self.inimigo.nome} venceu a batalha !")
