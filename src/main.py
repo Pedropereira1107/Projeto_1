@@ -1,11 +1,11 @@
 from guerreiro import Guerreiro
 from inimigo import Inimigo
 from batalha import Batalha
-
+from arqueiro import Arqueiro
 
 def main():
 
-    jogador = Guerreiro("Arthur")
+    jogador = Arqueiro("Arthur")
 
     inimigo = Inimigo(
         nome="Goblin",
