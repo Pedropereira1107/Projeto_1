@@ -1,4 +1,7 @@
-from personagem import Personagem
+try:
+    from .personagem import Personagem
+except ImportError:
+    from personagem import Personagem
 
 class Mago(Personagem):
 
