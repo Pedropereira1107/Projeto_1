@@ -15,5 +15,5 @@ class Guerreiro(Personagem):
         )
 
     def atacar(self, alvo):
-        # TODO: implementar ataque do guerreiro
-        pass
+        alvo.receber_dano(self.ataque)
+        print(f"{self.nome} atacou {alvo.nome}!")
