@@ -1,22 +1,20 @@
-﻿from guerreiro import Guerreiro
+﻿from arqueiro import Arqueiro
 from inimigo import Inimigo
-from batalha import Batalha
-from arqueiro import Arqueiro
 from orc import Orc
-def main():
+from campanha import Campanha
 
+
+def main():
     jogador = Arqueiro("Arthur")
 
-    inimigo = Orc(
-        nome="Orc",
-        vida=100,
-        ataque=20,
-        defesa=10
-    )
+    inimigos = [
+        Inimigo("Goblin", vida=40, ataque=12, defesa=2),
+        Inimigo("Goblin Veterano", vida=60, ataque=15, defesa=5),
+        Orc("Gruk"),
+    ]
 
-    batalha = Batalha(jogador, inimigo)
-
-    batalha.iniciar()
+    campanha = Campanha(jogador, inimigos)
+    campanha.iniciar()
 
 
 if __name__ == "__main__":
