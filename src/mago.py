@@ -16,8 +16,8 @@ class Mago(Personagem):
         self.mana = 100
 
     def atacar(self, alvo):
-        # TODO: implementar ataque normal
-        pass
+       alvo.receber_dano(self.ataque)
+       print(f"{self.nome} atacou {alvo.nome}!")
 
     def usar_magia(self, alvo):
         # TODO: implementar magia
