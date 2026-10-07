@@ -37,7 +37,7 @@ class Batalha:
 
             elif opcao == "3":
                 print("Você fugiu da batalha!")
-                return
+                return "fuga"
 
             else:
                 print("Opção inválida.")
@@ -50,5 +50,7 @@ class Batalha:
         # TODO: verificar quem venceu
         if self.jogador.esta_vivo():
             print(f"{self.jogador.nome} venceu a batalha !")
+            return "vitoria"
         else:
             print(f"{self.inimigo.nome} venceu a batalha !")
+            return "derrota"
