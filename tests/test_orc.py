@@ -13,8 +13,8 @@ def test_orc_e_um_inimigo_com_atributos_proprios():
 
     assert isinstance(orc, Inimigo)
     assert orc.nome == "Orc"
-    assert orc.vida == 150
-    assert orc.ataque == 22
+    assert orc.vida == 100
+    assert orc.ataque == 20
     assert orc.defesa == 10
 
 
