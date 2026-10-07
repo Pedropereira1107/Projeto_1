@@ -15,8 +15,8 @@ class Orc(Inimigo):
     def __init__(self, nome="Orc"):
         super().__init__(
             nome=nome,
-            vida=150,
-            ataque=22,
+            vida=100,
+            ataque=20,
             defesa=10
         )
 
