@@ -1,10 +1,37 @@
-from item import PocaoVida
+try:
+    from .item import PocaoVida
+except ImportError:
+    from item import PocaoVida
 
 class Batalha:
 
     def __init__(self, jogador, inimigo):
         self.jogador = jogador
         self.inimigo = inimigo
+
+    def executar_turno(self, opcao):
+        """Resolve uma ação sem bloquear a interface com input()."""
+        if not self.jogador.esta_vivo():
+            return "derrota"
+        if not self.inimigo.esta_vivo():
+            return "vitoria"
+        if opcao == "1":
+            self.jogador.atacar(self.inimigo)
+        elif opcao == "2":
+            PocaoVida().usar(self.jogador)
+        elif opcao == "3":
+            print("Você fugiu da batalha!")
+            return "fuga"
+        else:
+            print("Opção inválida.")
+            return None
+        if self.inimigo.esta_vivo():
+            self.inimigo.atacar(self.jogador)
+        if not self.jogador.esta_vivo():
+            return "derrota"
+        if not self.inimigo.esta_vivo():
+            return "vitoria"
+        return None
 
     def iniciar(self):
 
@@ -25,28 +52,10 @@ class Batalha:
 
             opcao = input("Escolha uma opção: ")
 
-            if opcao == "1":
-                # TODO: jogador ataca inimigo
-                self.jogador.atacar(self.inimigo)
+            resultado = self.executar_turno(opcao)
+            if resultado == "fuga":
+                return resultado
 
-            elif opcao == "2":
-                # TODO: implementar item
-                pocao_vida = PocaoVida()
-                pocao_vida.usar(self.jogador)
-                
-
-            elif opcao == "3":
-                print("Você fugiu da batalha!")
-                return "fuga"
-
-            else:
-                print("Opção inválida.")
-                continue
-
-            # TODO: inimigo deve atacar depois do jogador
-            if self.inimigo.esta_vivo():
-                self.inimigo.atacar(self.jogador)
-            
         # TODO: verificar quem venceu
         if self.jogador.esta_vivo():
             print(f"{self.jogador.nome} venceu a batalha !")
