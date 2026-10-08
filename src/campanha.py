@@ -1,4 +1,7 @@
-from batalha import Batalha
+try:
+    from .batalha import Batalha
+except ImportError:
+    from batalha import Batalha
 
 
 class Campanha:
